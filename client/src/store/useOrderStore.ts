@@ -4,7 +4,7 @@ import { createJSONStorage, persist } from "zustand/middleware";
 
 
 
-const API_END_POINT ='https://foodapp-susanta-f3sp.vercel.app/api/v1/order'
+const API_END_POINT =(import.meta.env.VITE_SERVER_API_END_POINT || 'http://localhost:3000/api/v1' )+'/order'
 
 const useOrderStore = create()(persist((set)=>({
     loading:false,

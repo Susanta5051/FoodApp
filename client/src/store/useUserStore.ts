@@ -5,7 +5,7 @@ import axios from'axios'
 import type{ LoginInputState} from '../schema/UserSchema'
 import { toast } from 'react-toastify'
 
-const API_END_POINT = 'https://foodapp-susanta-f3sp.vercel.app/api/v1/user'
+const API_END_POINT = (import.meta.env.VITE_SERVER_API_END_POINT || 'http://localhost:3000/api/v1' )+ '/user'
 axios.defaults.withCredentials = true
 type ContainerType = {
   menu:{
